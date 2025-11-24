@@ -1,0 +1,441 @@
+/* CoursePage.css - Стили для страницы видео-уроков */
+
+.course-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+}
+
+.course-page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.course-page-header .header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-back {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.course-page-header h1 {
+  flex: 1;
+  margin: 0;
+  font-size: 24px;
+  min-width: 200px;
+}
+
+.course-page-content {
+  display: flex;
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Боковая панель с уроками */
+.lessons-sidebar {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 280px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.sidebar-header h3 {
+  margin: 0 0 12px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.overall-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overall-progress .progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.overall-progress .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.lessons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s;
+  background: #f9f9f9;
+}
+
+.lesson-item:hover {
+  background: #f0f0f0;
+}
+
+.lesson-item.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.lesson-item.completed {
+  opacity: 0.7;
+}
+
+.lesson-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.lesson-item.active .lesson-number {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.lesson-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  word-break: break-word;
+}
+
+.lesson-item.active .lesson-title {
+  color: white;
+}
+
+/* Основной контент */
+.lesson-content {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-header {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.lesson-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.lesson-number {
+  background: #667eea;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.video-player-container {
+  margin-bottom: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lesson-controls {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.control-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-control,
+.btn-complete {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-control {
+  background: #e0e0e0;
+  color: #333;
+  flex: 1;
+  max-width: 150px;
+}
+
+.btn-control:hover:not(:disabled) {
+  background: #d0d0d0;
+}
+
+.btn-control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-complete {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  flex: 1;
+  max-width: 200px;
+}
+
+.btn-complete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-complete.completed {
+  background: #4caf50;
+}
+
+/* Статистика */
+.lesson-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-top: auto;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  color: #999;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.stat-value {
+  color: #667eea;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Материалы и тест */
+.lesson-materials {
+  margin-top: 20px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #eef2ff;
+}
+
+.lesson-materials h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.lesson-test {
+  margin-top: 16px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #eef2ff;
+}
+
+.test-question .question-text {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.btn-submit-test {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Toggle cards (Materials / Test) */
+.toggle-cards {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tab {
+  padding: 10px 14px;
+  background: #f3f4f6;
+  border: 1px solid #e6e9f2;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #334155;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 6px 18px rgba(102, 126, 234, 0.25);
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Медиа-запросы */
+@media (max-width: 1024px) {
+  .course-page-content {
+    flex-direction: column;
+  }
+
+  .lessons-sidebar {
+    width: 100%;
+    position: static;
+    max-height: none;
+  }
+
+  .lessons-list {
+    max-height: 300px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .lesson-item {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .lesson-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-page-header .header-content {
+    flex-wrap: wrap;
+  }
+
+  .course-page-header h1 {
+    font-size: 20px;
+  }
+
+  .lesson-content {
+    padding: 15px;
+  }
+
+  .lesson-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .control-group {
+    flex-direction: column;
+  }
+
+  .btn-control,
+  .btn-complete {
+    max-width: none;
+  }
+
+  .lesson-stats {
+    grid-template-columns: 1fr;
+  }
+}
